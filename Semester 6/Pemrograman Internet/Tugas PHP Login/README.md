@@ -12,6 +12,8 @@ atau
 ```sql
 CREATE DATABASE `login_app`;
 
+USE `login_app`;
+
 CREATE TABLE `login_app`.`users` (
     `id` INT NOT NULL AUTO_INCREMENT ,  
     `name` VARCHAR(64) NOT NULL,  
