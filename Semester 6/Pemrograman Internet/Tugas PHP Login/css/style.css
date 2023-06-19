@@ -1,0 +1,97 @@
+:root {
+  --main-color: #ed6a5a;
+  --secondary-color: #f4f1bb;
+  --dark-color: #34384c;
+  --light-color: #f8f8f8;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  accent-color: var(--main-color);
+}
+
+body {
+  all: unset;
+  background-color: var(--dark-color);
+  height: 100vh;
+}
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background-color: var(--light-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.1));
+}
+
+h2 {
+  text-align: center;
+  background-color: var(--main-color);
+  color: var(--light-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--dark-color);
+}
+
+input {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 300px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+input::placeholder {
+  color: #d5d5d5;
+  font-size: 0.9rem;
+}
+
+input:focus {
+  border: 2px solid rgba(237, 106, 90, 0.5);
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--main-color);
+  background-color: #ffffff;
+  border: 2px solid rgba(237, 106, 90, 0.5);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--main-color);
+  color: var(--light-color);
+}
+
+input[type="radio"] {
+  max-width: max-content;
+}
+
+a {
+  text-align: center;
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
