@@ -8,7 +8,7 @@
 </head>
 <body>
   <main>
-    <form class="register" action="/auth/handle_register.php" method="post">
+    <form class="wrapper register" action="/auth/handle_register.php" method="post">
       <h2>REGISTER</h2>
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="Your name" required>

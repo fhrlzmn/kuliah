@@ -1,6 +1,10 @@
 <?php
 
+require ("../layout.php");
+
 session_start();
+
+$css = "../css/style.css";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   require ("../config/connect_db.php");
@@ -37,21 +41,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   );
 ";
 
-  echo $sql;
-
   $result = mysqli_query($conn, $sql);
 
   if ($result) {
-    echo "You have successfully registered! <br />";
-    echo "You will be redirected to login page in 2 seconds.";
-    header("refresh:2; url=/login.php");
+    render("<p>You have successfully registered!</p> <br /> <p>You will be redirected to login page in 2 seconds.</p>", $css);
+    header("refresh:1; url=/login.php");
   } else {
-    echo "Registration failed!";
-    header("refresh:2; url=/register.php");
+    render("<p>Registration failed!<p/>", $css);
+    header("refresh:1; url=/register.php");
   }
 } else {
-  echo "You are not allowed to access this page!";
-  header("refresh:2; url=/login.php");
+  render("<p>You are not allowed to access this page!</p>", $css);
+  header("refresh:1; url=/login.php");
 }
 
 ?>

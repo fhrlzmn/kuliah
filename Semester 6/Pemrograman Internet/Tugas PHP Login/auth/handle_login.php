@@ -1,8 +1,10 @@
 <?php
 
-// database connection
+require ("../layout.php");
 
 session_start();
+
+$css = "../css/style.css";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   require ("../config/connect_db.php");
@@ -10,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   try {
     $conn = connect_db();
   } catch (Exception $e) {
-    echo "Connection failed: " . $e -> getMessage();
+    echo "Connection failed: " . $e -> getMessage();;
   }
 
   $username = $_POST["username"];
@@ -23,15 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if (mysqli_num_rows($result) == 1) {
     $_SESSION["username"] = $row["name"];
-    echo "You have successfully logged in!";
-    header("refresh:2; url=/index.php");
+    render("<p>You have successfully logged in!</p>", $css);
+    header("refresh:1; url=/index.php");
   } else {
-    echo "Username or password is incorrect!";
-    header("refresh:2; url=/login.php");
+    render("<p>Username or password is incorrect!</p>", $css);
+    header("refresh:1; url=/login.php");
   }
 } else {
-  echo "You are not allowed to access this page!";
-  header("refresh:2; url=/login.php");
+  render("<p>You are not allowed to access this page!</p>", $css);
+  header("refresh:1; url=/login.php");
 }
 
 ?>

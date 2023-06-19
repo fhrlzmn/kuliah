@@ -8,7 +8,7 @@
 </head>
 <body>
   <main>
-    <form class="login" action="/auth/handle_login.php" method="post">
+    <form class="wrapper login" action="/auth/handle_login.php" method="post">
       <h2>LOGIN</h2>
       <label for="username">Username</label>
       <input type="text" name="username" id="username" required>

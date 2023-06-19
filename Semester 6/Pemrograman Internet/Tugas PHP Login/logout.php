@@ -1,14 +1,19 @@
 <?php
 
+require ("./layout.php");
+
 session_start();
 
+$css = "./css/style.css";
+
 if(isset($_SESSION["username"])) {
-  echo "Logging out...";
+  render("<p>Logging out...</p>", $css);
   session_destroy();
-  header("refresh:2; url=/login.php");
+  header("refresh:1; url=/login.php");
   exit();
 } else {
-  echo "You haven't login yet, go back to <a href='login.php'>login page</a>";
+  render("<p>You haven't login yet, go back to <a href='login.php'>login page</a></p>", $css);
 }
 
 ?>
+

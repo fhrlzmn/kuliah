@@ -14,9 +14,23 @@ if (!isset($_SESSION["username"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello, <?php echo $_SESSION["username"] ?>!</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <style>
+    h2 span {
+      text-decoration: underline;
+    }
+
+    p {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, <?php echo $_SESSION["username"] ?>!</h1>
-  <a href="logout.php">Logout</a>
+  <main>
+    <div class="wrapper">
+      <h2>Hello, <span><?php echo $_SESSION["username"] ?>!</span></h2>
+      <p><a href="logout.php">Logout</a></p>
+    </div>
+  </main>
 </body>
 </html>
