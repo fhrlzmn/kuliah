@@ -15,7 +15,7 @@
       <label for="password">Password</label>
       <input type="password" name="password" id="password" required>
       <input type="submit" value="Log In" name="login">
-      <p>Don't have an account? <a href="/register.php">Sign Up</a>
+      <p>Don't have an account? <a href="/register.php">Sign Up</a></p>
     </form>
   </main>
 </body>
